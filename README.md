@@ -1,0 +1,1 @@
+Minimal RSVP speed-reader TUI in Go (Charm).
