@@ -1,4 +1,6 @@
+node_modules/
 dist/
-*.exe
-*.out
+src-tauri/target/
+.pi/
 .DS_Store
+*.log

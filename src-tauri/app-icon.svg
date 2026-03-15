@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="168" y1="112" x2="856" y2="912" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3A404C"/>
+      <stop offset="0.28" stop-color="#1C212B"/>
+      <stop offset="0.7" stop-color="#0B0E14"/>
+      <stop offset="1" stop-color="#06080D"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="512" y1="104" x2="512" y2="504" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="white" stop-opacity="0.34"/>
+      <stop offset="0.38" stop-color="white" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="512" y1="232" x2="512" y2="808" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="white" stop-opacity="0.32"/>
+      <stop offset="0.18" stop-color="white" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="white" stop-opacity="0.06"/>
+    </linearGradient>
+    <linearGradient id="rail" x1="512" y1="268" x2="512" y2="756" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#DCE4F1" stop-opacity="0.88"/>
+      <stop offset="1" stop-color="#8C96A8" stop-opacity="0.58"/>
+    </linearGradient>
+    <radialGradient id="orb" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(512 512) rotate(90) scale(118)">
+      <stop offset="0" stop-color="#FF8889"/>
+      <stop offset="0.58" stop-color="#FF585D"/>
+      <stop offset="1" stop-color="#D22E37"/>
+    </radialGradient>
+    <filter id="shadow" x="106" y="92" width="812" height="844" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="30"/>
+      <feGaussianBlur stdDeviation="28"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.01 0 0 0 0 0.02 0 0 0 0 0.05 0 0 0 0.34 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+    <filter id="orbShadow" x="334" y="334" width="356" height="356" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="20"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.17 0 0 0 0 0.02 0 0 0 0 0.05 0 0 0 0.45 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+    <clipPath id="tileClip">
+      <rect x="112" y="112" width="800" height="800" rx="184"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#tileClip)">
+    <rect x="112" y="112" width="800" height="800" rx="184" fill="url(#bg)"/>
+    <rect x="112" y="112" width="800" height="800" rx="184" fill="url(#sheen)"/>
+    <path d="M112 572C233 514 354 487 512 487C670 487 791 514 912 572V912H112V572Z" fill="#04060A" fill-opacity="0.2"/>
+
+    <g filter="url(#shadow)">
+      <rect x="170" y="170" width="684" height="684" rx="156" fill="#0F131A" fill-opacity="0.28"/>
+      <rect x="170.5" y="170.5" width="683" height="683" rx="155.5" stroke="white" stroke-opacity="0.1"/>
+      <rect x="206" y="206" width="612" height="612" rx="132" fill="url(#glass)"/>
+      <rect x="206.5" y="206.5" width="611" height="611" rx="131.5" stroke="white" stroke-opacity="0.16"/>
+
+      <rect x="491" y="268" width="42" height="488" rx="21" fill="url(#rail)"/>
+      <rect x="491.5" y="268.5" width="41" height="487" rx="20.5" stroke="white" stroke-opacity="0.22"/>
+
+      <g filter="url(#orbShadow)">
+        <circle cx="512" cy="512" r="118" fill="url(#orb)"/>
+        <circle cx="512" cy="512" r="117.5" stroke="#FFB4B6" stroke-opacity="0.45"/>
+      </g>
+      <ellipse cx="480" cy="462" rx="54" ry="38" fill="white" fill-opacity="0.16"/>
+    </g>
+
+  </g>
+</svg>
