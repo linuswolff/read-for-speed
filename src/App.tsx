@@ -122,7 +122,7 @@ function RenderedText({
         left: `${ANCHOR_PERCENT}%`,
         transform: `translate(${-offset}px, -50%)`,
         fontSize: `${fontSizeRem}rem`,
-        fontWeight: 600,
+        fontWeight: 400,
       }}
     >
       {chars.map((char, index) => (
@@ -411,7 +411,7 @@ export default function App() {
 
   return (
     <div
-      className="group/outer h-screen w-screen bg-black text-[#D4D7DE] flex flex-col items-center justify-center gap-6"
+      className="relative h-screen w-screen bg-black text-[#D4D7DE] flex items-center justify-center"
     >
       {/* lw backlink — pinned top-left of viewport */}
       <div className="absolute top-6 left-6">
@@ -431,7 +431,7 @@ export default function App() {
         onPaste={handlePaste}
         onMouseDown={() => rootRef.current?.focus()}
         className="relative overflow-hidden bg-[#090A0D] border-2 border-[#1E2128] outline-none rounded-xl"
-        style={{ width: 'min(800px, min(90vw, 90vh))', height: 'min(800px, min(90vw, 90vh))' }}
+        style={{ width: 'min(900px, min(90vw, 135vh))', aspectRatio: '3/2' }}
       >
       <div
         className="absolute inset-x-0 border-t border-[#565B65]"
@@ -537,15 +537,22 @@ export default function App() {
       ) : null}
       </div>
 
-      {/* Desktop app tease — hidden, fades in on hover of outer wrapper */}
-      <div className="flex items-center gap-3 opacity-0 group-hover/outer:opacity-100 transition-opacity duration-500 select-none pointer-events-none">
-        {/* Minimal SVG logo: vertical line + red focal dot */}
-        <svg width="18" height="28" viewBox="0 0 18 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="9" y1="0" x2="9" y2="28" stroke="#565B65" strokeWidth="1.5"/>
-          <circle cx="9" cy="14" r="4.5" fill="#FF4D4F"/>
+      {/* Desktop app tease — pinned, centered between box bottom and viewport bottom */}
+      <a
+        href="https://github.com/linuswolff/read-for-speed"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute flex flex-col items-center gap-3 hover:opacity-70 transition-opacity duration-300"
+        style={{ top: 'calc(50% + min(450px, min(45vw, 67.5vh)) + (50vh - min(450px, min(45vw, 67.5vh))) / 2)', transform: 'translateY(-50%)' }}
+      >
+        {/* App icon: rounded rect with vertical line + red dot */}
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="9" fill="#141618"/>
+          <line x1="20" y1="6" x2="20" y2="34" stroke="#565B65" strokeWidth="1.5" strokeLinecap="round"/>
+          <circle cx="20" cy="20" r="6" fill="#FF4D4F"/>
         </svg>
         <span className="text-xs text-[#565B65] tracking-wide">Also available as a desktop app</span>
-      </div>
+      </a>
     </div>
   );
 }
