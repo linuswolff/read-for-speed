@@ -418,7 +418,7 @@ export default function App() {
       <div className="absolute top-6 left-6">
         <a
           href="https://linuswolff.github.io/"
-          className="text-2xl font-bold tracking-tighter hover:opacity-70 transition-opacity"
+          className="text-2xl font-bold tracking-tighter text-white hover:opacity-70 transition-opacity"
         >
           lw
         </a>
