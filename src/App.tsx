@@ -411,7 +411,7 @@ export default function App() {
 
   return (
     <div
-      className="h-screen w-screen bg-[#090A0D] text-[#D4D7DE] flex items-center justify-center"
+      className="group/outer h-screen w-screen bg-black text-[#D4D7DE] flex flex-col items-center justify-center gap-6"
     >
       {/* lw backlink — pinned top-left of viewport */}
       <div className="absolute top-6 left-6">
@@ -430,8 +430,8 @@ export default function App() {
         onKeyDown={handleKeyDown}
         onPaste={handlePaste}
         onMouseDown={() => rootRef.current?.focus()}
-        className="relative overflow-hidden bg-[#090A0D] border border-[#1E2128] outline-none rounded-sm"
-        style={{ width: '860px', height: '480px' }}
+        className="relative overflow-hidden bg-[#090A0D] border-2 border-[#1E2128] outline-none rounded-xl"
+        style={{ width: 'min(800px, min(90vw, 90vh))', height: 'min(800px, min(90vw, 90vh))' }}
       >
       <div
         className="absolute inset-x-0 border-t border-[#565B65]"
@@ -535,6 +535,16 @@ export default function App() {
           </div>
         </div>
       ) : null}
+      </div>
+
+      {/* Desktop app tease — hidden, fades in on hover of outer wrapper */}
+      <div className="flex items-center gap-3 opacity-0 group-hover/outer:opacity-100 transition-opacity duration-500 select-none pointer-events-none">
+        {/* Minimal SVG logo: vertical line + red focal dot */}
+        <svg width="18" height="28" viewBox="0 0 18 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="9" y1="0" x2="9" y2="28" stroke="#565B65" strokeWidth="1.5"/>
+          <circle cx="9" cy="14" r="4.5" fill="#FF4D4F"/>
+        </svg>
+        <span className="text-xs text-[#565B65] tracking-wide">Also available as a desktop app</span>
       </div>
     </div>
   );
