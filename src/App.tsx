@@ -259,6 +259,7 @@ export default function App() {
     resetText(entry.text);
     setShowClipboardHistory(false);
     setSelectedClipboardIndex(0);
+    setTimeout(() => rootRef.current?.focus(), 0);
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
