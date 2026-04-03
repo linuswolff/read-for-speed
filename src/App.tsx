@@ -411,13 +411,28 @@ export default function App() {
 
   return (
     <div
-      ref={rootRef}
-      tabIndex={0}
-      onKeyDown={handleKeyDown}
-      onPaste={handlePaste}
-      onMouseDown={() => rootRef.current?.focus()}
-      className="relative h-screen w-screen overflow-hidden bg-[#090A0D] text-[#D4D7DE] outline-none"
+      className="h-screen w-screen bg-[#090A0D] text-[#D4D7DE] flex items-center justify-center"
     >
+      {/* lw backlink — pinned top-left of viewport */}
+      <div className="absolute top-6 left-6">
+        <a
+          href="https://linuswolff.github.io/"
+          className="text-2xl font-bold tracking-tighter hover:opacity-70 transition-opacity"
+        >
+          lw
+        </a>
+      </div>
+
+      {/* Reader box */}
+      <div
+        ref={rootRef}
+        tabIndex={0}
+        onKeyDown={handleKeyDown}
+        onPaste={handlePaste}
+        onMouseDown={() => rootRef.current?.focus()}
+        className="relative overflow-hidden bg-[#090A0D] border border-[#1E2128] outline-none rounded-sm"
+        style={{ width: '860px', height: '480px' }}
+      >
       <div
         className="absolute inset-x-0 border-t border-[#565B65]"
         style={{ top: `calc(50% - ${GUIDE_OFFSET_REM}rem)` }}
@@ -520,6 +535,7 @@ export default function App() {
           </div>
         </div>
       ) : null}
+      </div>
     </div>
   );
 }
