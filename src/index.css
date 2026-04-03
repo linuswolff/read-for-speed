@@ -1,3 +1,5 @@
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/700.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,7 +7,7 @@
 :root {
   color: #d4d7de;
   background: #090a0d;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 html,

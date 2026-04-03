@@ -15,6 +15,7 @@
     "check": "npm run build && cargo check --manifest-path src-tauri/Cargo.toml"
   },
   "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.2.8",
     "@tauri-apps/api": "^2.8.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
